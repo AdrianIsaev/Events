@@ -18,9 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.betatest.OnClickItemInterface;
 
+import com.example.betatest.data.storage.room.entity.IventsSpot;
 import com.example.betatest.data.storage.room.entity.ProjectModel;
 import com.example.betatest.databinding.ProjectItemLayoutBinding;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHolder> {
     List<ProjectModel> projectModelList;
@@ -30,12 +33,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
     private SharedPreferences sharedPreferences;
     private static final int PERMISSION_REQUEST_GALLERY= 1;
     private OnClickItemInterface onClickItemInterface;
-
+    ArrayList<IventsSpot> list;
     private MutableLiveData<Uri> uriLiveData;
 
-    public ProjectAdapter(Context context, OnClickItemInterface onClickItemInterface, LifecycleOwner lifecycleOwner) {
+    public ProjectAdapter(Context context, OnClickItemInterface onClickItemInterface, LifecycleOwner lifecycleOwner, ArrayList<IventsSpot> list) {
         this.context = context;
         this.onClickItemInterface = onClickItemInterface;
+        this.list = list;
 
     }
 
@@ -60,7 +64,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         }
 
 
-
+        //Picasso.get().load(iventsSpot.getImageSpot()).into(holder.binding.imgLogorifm);
     }
     public void setProjects(List<ProjectModel> projects) {
         projectModelList = projects;

@@ -19,9 +19,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.betatest.BitmapTypeConverter;
 import com.example.betatest.data.storage.room.dao.ProjectDao;
+import com.example.betatest.data.storage.room.dao.SettDao;
 import com.example.betatest.data.storage.room.entity.ProjectModel;
+import com.example.betatest.data.storage.room.entity.SettModel;
 
-@Database(entities = {ProjectModel.class}, exportSchema = false, version = 6)
+@Database(entities = {ProjectModel.class, SettModel.class}, exportSchema = false, version = 7)
 @TypeConverters({BitmapTypeConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -32,14 +34,13 @@ public abstract class AppDatabase extends RoomDatabase {
     private static final Object LOCK = new Object();
 
     public abstract ProjectDao projectDao();
-
     public static AppDatabase getInstance(Context context) {
         if (instance == null) {
             synchronized (LOCK) {
                 if (instance == null) {
                     instance = Room.databaseBuilder(context.getApplicationContext(),
                                     AppDatabase.class, DATABASE_NAME)
-                            .addMigrations(MIGRATION_5_6)
+                            .addMigrations(MIGRATION_6_7)
                             .build();
                 }
             }
@@ -64,6 +65,19 @@ public abstract class AppDatabase extends RoomDatabase {
             database.execSQL("ALTER TABLE `new_project` RENAME TO `project`");
         }
     };
+
+    static final Migration MIGRATION_6_7 = new Migration(6, 7) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+
+            database.execSQL("CREATE TABLE IF NOT EXISTS `new_project33` (`jiji2` INTEGER NOT NULL, `joji` INTEGER NOT NULL PRIMARY KEY, `joji2` INTEGER NOT NULL,`jiji` INTEGER NOT NULL)");
+
+            database.execSQL("DROP TABLE IF EXISTS `project2`");
+
+            database.execSQL("ALTER TABLE `new_project33` RENAME TO `project2`");
+        }
+    };
+
     public void clearAllData() {
         runInTransaction(new Runnable() {
             @Override

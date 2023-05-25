@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 
 import com.example.betatest.R;
 import com.example.betatest.data.storage.room.entity.ProjectModel;
+import com.example.betatest.data.storage.room.entity.SettModel;
 
 import java.util.Calendar;
 
@@ -45,15 +46,16 @@ public class notification extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        SettModel settModel;
+
+
         buttonCalend = view.findViewById(R.id.textViewyved2);
         buttonEvents = view.findViewById(R.id.textViewyved1);
         AppCompatButton buttonNotify = view.findViewById(R.id.textViewyved2);
         //String lolipop = projectModel.getTitle();
-        sharedPreferences = requireContext().getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-        isOn = sharedPreferences.getBoolean("isOn", false);
 
-        isOn2 = sharedPreferences.getBoolean("isOn2", false);
         if (isOn) {
             buttonEvents.setBackgroundResource(onIcon);
             buttonEvents.setText("ON");

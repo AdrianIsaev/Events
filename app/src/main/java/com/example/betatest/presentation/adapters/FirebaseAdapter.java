@@ -49,14 +49,6 @@ public class FirebaseAdapter extends RecyclerView.Adapter<FirebaseAdapter.Fireba
         IventsSpot iventsSpot = list.get(position);
 
 
-        //FirebaseStorage storage = FirebaseStorage.getInstance();
-        //StorageReference storageRef = storage.getReference().child("images/" + iventsSpot.getImageFileName());
-
-        // Загружаем изображение с помощью библиотеки Glide и отображаем его в ImageView
-        //Glide.with(context)
-       //        .load(storageRef)
-        //        .into(holder.imageView);
-
 
         TextView titleforagres, dateforagres;
         holder.titlefirebase.setText(iventsSpot.getTitleSpot());

@@ -64,8 +64,7 @@ public class defaultfragment extends Fragment {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
                     switch (item.getItemId()) {
-                        case (R.id.tool_feedback):
-                            break;
+
                         case (R.id.tool_logout):
 
                             mAuth.signOut();

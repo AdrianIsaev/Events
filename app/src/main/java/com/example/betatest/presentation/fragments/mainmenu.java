@@ -69,7 +69,7 @@ public class mainmenu extends Fragment implements OnClickItemInterface {
         ImageButton addProject = view.findViewById(R.id.addProject);
         RecyclerView projectRecyclerView = view.findViewById(R.id.projectRecyclerView);
         projectRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new ProjectAdapter(getContext(),this,this);
+        adapter = new ProjectAdapter(getContext(),this,this, null);
         projectRecyclerView.setAdapter(adapter);
         recyclerViewfirebase = view.findViewById(R.id.firebaseRecyclerView);
         database = FirebaseDatabase.getInstance().getReference("IventsSpot");

@@ -78,7 +78,7 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
         //RecyclerView recyclerView = fragment.recyclerView;
 
         //recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ProjectAdapter(this, this, this);
+        adapter = new ProjectAdapter(this, this, this, null);
         //recyclerView.setAdapter(adapter);
 
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
@@ -92,7 +92,9 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
 
         });
 
-
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       //getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setTitle("Создание мероприятия");
         if (getIntent().hasExtra("model")) {
             projectModel = getIntent().getParcelableExtra("model");
             binding.edtTitle.setText(projectModel.title);
@@ -147,21 +149,50 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
                 projectModel.title = title;
                 projectModel.watcher = watcher;
 
-               // DatabaseReference iventsSpotRef = databaseRef.child("IventsSpot");
-
-               // DatabaseReference myNewSpotRef = iventsSpotRef.push();
-
-               // myNewSpotRef.child("titleSpot").setValue(title);
-               // myNewSpotRef.child("usersSpot").setValue(watcher);
-               // myNewSpotRef.child("adressSpot").setValue(adress);
-               // myNewSpotRef.child("dateSpot").setValue(projectModel.language);
-
 
 
                 projectViewModel.updateProject(projectModel);
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                ImageView imageView = findViewById(R.id.edtImgLogo);
+                try {
+                    Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte[] data = baos.toByteArray();
 
-                //Toast.makeText(this, "Updated", Toast.LENGTH_LONG).show();
+                    StorageReference storageRef = storage.getReference().child("images/" + UUID.randomUUID().toString() + ".jpg");
+                    UploadTask uploadTask = storageRef.putBytes(data);
+                    uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String imageUrl = uri.toString();
+                                    DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+                                    Query query = databaseRef.child("IventsSpot").orderByChild("titleSpot").equalTo(title);
+                                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                snapshot.child("imageSpot").getRef().setValue(imageUrl);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+                catch (Exception e){
+                    Toast.makeText(this, "Не установлена картинка", Toast.LENGTH_LONG).show();
+                }
                 finish();
+
             } else {
                 title = binding.edtTitle.getText().toString().trim();
                 watcher = Integer.parseInt(binding.edtWatcher.getText().toString().trim());

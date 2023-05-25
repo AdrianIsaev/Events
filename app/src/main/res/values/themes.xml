@@ -28,19 +28,19 @@
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
-        <style name="AppTheme.Light" parent="Theme.AppCompat.Light">
+        <style name="AppTheme.Light" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
             <item name="colorPrimary">@color/jove</item>
             <item name="colorPrimaryDark">@color/purple_700</item>
             <item name="colorAccent">@color/jove</item>
-            <item name="android:textColorPrimary">@color/jove</item>
-            <item name="android:textColorSecondary">@color/jove</item>
-            <item name="android:windowBackground">@color/jove</item>
-            <item name="android:navigationBarColor">@color/jove</item>
-            <item name="android:statusBarColor">@color/jove</item>
+
+
+
+            <item name="android:statusBarColor">@color/black</item>
             <item name="android:windowLightStatusBar">true</item>
             <item name="android:windowLightNavigationBar">true</item>
             <item name="android:windowDrawsSystemBarBackgrounds">true</item>
             <item name="android:elevation">0dp</item>
+
 
         </style>
 

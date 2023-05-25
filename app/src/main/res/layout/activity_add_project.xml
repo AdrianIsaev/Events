@@ -64,13 +64,14 @@
                 android:fontFamily="@font/hoks"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeWidth="2dp"
+
                 app:hintAnimationEnabled="true">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/eft"
-                    android:hint="Дата проведения события"
+                    android:hint="Дата дд.мм.гггг"
                     android:inputType="date" />
 
 
