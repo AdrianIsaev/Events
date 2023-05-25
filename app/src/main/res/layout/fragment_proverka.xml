@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_margin="5sp"
+    tools:context=".presentation.fragments.vhod1">
+    <TextView
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"
+        android:layout_below="@+id/textViewProverka4"
+        android:id="@+id/textViewProverka5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/eft"
+        android:text="Мы отправили код верификации на вашу почту. Если письмо не пришло, проверьте папку СПАМ." />
+
+    <TextView
+        android:layout_marginTop="0sp"
+        android:layout_marginBottom="30sp"
+        android:id="@+id/textViewProverka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="51sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/black"
+        android:fontFamily="@font/eft"
+        android:text="Введите код верификации" />
+
+    <EditText
+        android:id="@+id/textViewProverka4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textViewProverka"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/edittextstyle"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/textViewProverka41"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/textViewProverka4"
+        android:layout_below="@+id/textViewProverka"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/edittextstyle"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/textViewProverka42"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/textViewProverka41"
+        android:layout_below="@+id/textViewProverka"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/edittextstyle"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/textViewProverka43"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/textViewProverka42"
+        android:layout_below="@+id/textViewProverka"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/edittextstyle"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="0sp"
+        android:id="@+id/textViewProverka7"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewProverka6"
+        android:layout_marginBottom="0dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:fontFamily="@font/eft"
+        android:background="@drawable/krygkracniy"
+        android:layout_centerHorizontal="true"
+        android:text="ПРОВЕРИТЬ" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/textViewProverka6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewProverka5"
+        android:layout_alignParentRight="true"
+
+        android:layout_marginRight="5sp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/eft"
+        android:text="Я не получил письмо? Отправить снова"
+        android:textColor="@color/jove"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>

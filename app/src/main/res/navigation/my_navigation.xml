@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/vhod1">
+
+    <fragment
+        android:id="@+id/vhod1"
+        android:name="com.example.betatest.presentation.fragments.vhod1"
+        android:label="vhod1">
+        <action
+            android:id="@+id/action_vhod1_to_defaultfragment"
+            app:destination="@id/defaultfragment" />
+        <action
+            android:id="@+id/action_vhod1_to_registr22"
+            app:destination="@id/registr2" />
+        <action
+            android:id="@+id/action_vhod1_to_vosstanovka23"
+            app:destination="@id/vosstanovka23" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainmenu"
+        android:name="com.example.betatest.presentation.fragments.mainmenu"
+        android:label="fragment_mainmenu"
+        tools:layout="@layout/fragment_mainmenu" >
+        <action
+            android:id="@+id/action_mainmenu_to_izmeni"
+            app:destination="@id/izmeni" />
+        <action
+            android:id="@+id/action_mainmenu_to_ivents"
+            app:destination="@id/ivents" />
+        <action
+            android:id="@+id/action_mainmenu_self"
+            app:destination="@id/mainmenu" />
+        <action
+            android:id="@+id/action_mainmenu_self2"
+            app:destination="@id/mainmenu" />
+        <action
+            android:id="@+id/action_mainmenu_to_defaultfragment"
+            app:destination="@id/defaultfragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/izmeni"
+        android:name="com.example.betatest.presentation.fragments.izmeni"
+        android:label="izmeni" >
+        <action
+            android:id="@+id/action_izmeni_to_mainmenu"
+            app:destination="@id/mainmenu" />
+        <action
+            android:id="@+id/action_izmeni_to_ivents"
+            app:destination="@id/ivents" />
+        <action
+            android:id="@+id/action_izmeni_to_stats"
+            app:destination="@id/stats" />
+        <action
+            android:id="@+id/action_izmeni_self"
+            app:destination="@id/izmeni" />
+        <action
+            android:id="@+id/action_izmeni_to_vhod1"
+            app:destination="@id/vhod1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ivents"
+        android:name="com.example.betatest.presentation.fragments.MAP.ivents"
+        android:label="ivents" >
+        <action
+            android:id="@+id/action_ivents_self"
+            app:destination="@id/ivents" />
+    </fragment>
+    <fragment
+        android:id="@+id/stats"
+        android:name="com.example.betatest.presentation.fragments.stats"
+        android:label="stats" >
+        <action
+            android:id="@+id/action_stats_to_izmeni"
+            app:destination="@id/izmeni" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultfragment"
+        android:name="com.example.betatest.presentation.fragments.defaultfragment"
+        android:label="defaultfragment" >
+        <action
+            android:id="@+id/action_defaultfragment_to_mainmenu"
+            app:destination="@id/mainmenu" />
+        <action
+            android:id="@+id/action_defaultfragment_to_izmeni"
+            app:destination="@id/izmeni" />
+        <action
+            android:id="@+id/action_defaultfragment_to_ivents"
+            app:destination="@id/ivents" />
+        <action
+            android:id="@+id/action_defaultfragment_to_stats"
+            app:destination="@id/stats" />
+        <action
+            android:id="@+id/action_defaultfragment_to_vhod1"
+            app:destination="@id/vhod1" />
+    </fragment>
+    <fragment
+        android:id="@+id/vosstanovka23"
+        android:name="com.example.betatest.presentation.fragments.vosstanovka2"
+        android:label="fragment_vosstanovka2"
+        tools:layout="@layout/fragment_vosstanovka2" >
+        <action
+            android:id="@+id/action_vosstanovka23_to_proverka2"
+            app:destination="@id/proverka2" />
+    </fragment>
+    <fragment
+        android:id="@+id/noviyparol2"
+        android:name="com.example.betatest.presentation.fragments.noviyparol"
+        android:label="noviyparol" >
+        <action
+            android:id="@+id/action_noviyparol2_to_vhod1"
+            app:destination="@id/vhod1" />
+    </fragment>
+    <fragment
+        android:id="@+id/proverka2"
+        android:name="com.example.betatest.presentation.fragments.proverka"
+        android:label="proverka" >
+        <action
+            android:id="@+id/action_proverka2_to_noviyparol2"
+            app:destination="@id/noviyparol2" />
+    </fragment>
+    <fragment
+        android:id="@+id/registr2"
+        android:name="com.example.betatest.presentation.fragments.registr"
+        android:label="registr" >
+        <action
+            android:id="@+id/action_registr2_to_defaultfragment"
+            app:destination="@id/defaultfragment" />
+    </fragment>
+
+
+</navigation>

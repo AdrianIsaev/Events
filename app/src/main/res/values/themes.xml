@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BetaTest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/jove</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/jove</item>
+        <item name="colorPrimaryDark">@color/jove</item>
+        <item name="colorAccent">@color/white</item>
+</style>
+
+    <style name="AppTheme2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+        <style name="AppTheme.Light" parent="Theme.AppCompat.Light">
+            <item name="colorPrimary">@color/jove</item>
+            <item name="colorPrimaryDark">@color/purple_700</item>
+            <item name="colorAccent">@color/jove</item>
+            <item name="android:textColorPrimary">@color/jove</item>
+            <item name="android:textColorSecondary">@color/jove</item>
+            <item name="android:windowBackground">@color/jove</item>
+            <item name="android:navigationBarColor">@color/jove</item>
+            <item name="android:statusBarColor">@color/jove</item>
+            <item name="android:windowLightStatusBar">true</item>
+            <item name="android:windowLightNavigationBar">true</item>
+            <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+            <item name="android:elevation">0dp</item>
+
+        </style>
+
+</resources>

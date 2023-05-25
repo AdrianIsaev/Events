@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="projectModel"
+            type="com.example.betatest.data.storage.room.entity.ProjectModel" />
+        <variable
+            name="listener"
+            type="com.example.betatest.OnClickItemInterface" />
+        <variable
+            name="bitmap"
+            type="com.example.betatest.BitmapTypeConverter"/>
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgLogorifm"
+                android:layout_width="84dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:layout_alignLeft="@+id/view"
+                android:layout_alignParentStart="true"
+
+                />
+            <View
+                android:id="@+id/view"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:background="#CE3335" />
+
+
+            <View
+                android:id="@+id/view2"
+                android:layout_alignParentTop="true"
+                android:layout_width="104dp"
+
+
+                android:layout_height="20dp"
+                android:background="#CE3335" />
+            <TextView
+                android:id="@+id/txtPName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="100dp"
+                android:layout_toEndOf="@+id/view"
+                android:fontFamily="@font/eft"
+                android:text="@{projectModel.title ,default=Title}"
+                android:textColor="#CE3335"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtPName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignStart="@+id/txtPName"
+                android:layout_marginEnd="10dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/eft"
+                android:text="@{String.valueOf(projectModel.watcher) ,default=Watcher}"
+                android:textSize="15dp"
+                android:layout_alignParentBottom="true"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                app:drawableEndCompat="@drawable/ic_eye"
+                app:drawableTint="#CE3335" />
+            <ImageView
+                android:id="@+id/imgDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()->listener.onClickItem(projectModel,false)}"
+                android:src="@drawable/ic_delete"
+                app:tint="#CE3335" />
+            <ImageView
+                android:id="@+id/imgEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgDelete"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_edit"
+                android:onClick="@{()->listener.onClickItem(projectModel,true)}"
+                app:tint="#CE3335" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

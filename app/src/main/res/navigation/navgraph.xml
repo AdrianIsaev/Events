@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/mainmenuFragment">
+
+    <fragment
+        android:id="@+id/mainmenuFragment"
+        android:name="com.example.betatest.presentation.fragments.mainmenu"
+        android:label=""
+        tools:layout="@layout/fragment_mainmenu" >
+
+
+        <action
+            android:id="@+id/action_mainmenuFragment_to_yveds"
+            app:destination="@id/Notification" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.betatest.presentation.fragments.MAP.ivents"
+        android:label="Карта"
+        tools:layout="@layout/fragment_ivents" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.betatest.presentation.fragments.izmeni"
+        android:label="Профиль"
+        tools:layout="@layout/izmeni" >
+
+        <action
+            android:id="@+id/action_profileFragment_to_vhod12"
+            app:destination="@id/vhod12" />
+    </fragment>
+    <fragment
+        android:id="@+id/vosstanovka22"
+        android:name="com.example.betatest.presentation.fragments.vosstanovka2"
+        android:label="fragment_vosstanovka2"
+        tools:layout="@layout/fragment_vosstanovka2" />
+    <fragment
+        android:id="@+id/Notification"
+        android:name="com.example.betatest.presentation.fragments.notification"
+        android:label="Уведомления"
+        tools:layout="@layout/notification" >
+        <action
+            android:id="@+id/action_yveds_to_mainmenuFragment"
+            app:destination="@id/mainmenuFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/vhod12"
+        android:name="com.example.betatest.presentation.fragments.vhod1"
+        android:label="vhod1">
+    </fragment>
+</navigation>

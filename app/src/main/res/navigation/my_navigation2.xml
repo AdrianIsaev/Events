@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation2"
+    app:startDestination="@id/vhod1">
+    <action
+        android:id="@+id/action_registr_to_defaultfragment"
+        app:destination="@id/defaultfragment" />
+    <fragment
+        android:id="@+id/noviyparol"
+        android:name="com.example.betatest.presentation.fragments.vhod1"
+        tools:layout="@layout/fragment_noviyparol"
+        android:label="fragment_noviyparol">
+        <action
+            android:id="@+id/action_noviyparol_to_vhod1"
+            app:destination="@id/vhod1" />
+    </fragment>
+    <fragment
+        android:id="@+id/vhod1"
+        android:name="com.example.betatest.presentation.fragments.vhod1"
+        android:label="vhod1">
+        <action
+            android:id="@+id/action_vhod1_to_vosstanovka2"
+            app:destination="@id/vosstanovka2" />
+        <action
+            android:id="@+id/action_vhod1_to_registr2"
+            app:destination="@id/registr" />
+        <action
+            android:id="@+id/action_vhod1_to_defaultfragment"
+            app:destination="@id/defaultfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vosstanovka2"
+        android:name="com.example.betatest.presentation.fragments.vosstanovka2"
+        tools:layout="@layout/fragment_vosstanovka2"
+        android:label="fragment_vosstanovka2">
+        <action
+            android:id="@+id/action_vosstanovka2_to_proverka"
+            app:destination="@id/proverka" />
+    </fragment>
+    <action
+        android:id="@+id/action_vhod1_to_defaultfragment"
+        app:destination="@id/defaultfragment" />
+    <fragment
+        android:id="@+id/registr"
+        android:name="com.example.betatest.presentation.fragments.registr"
+        android:label="registr">
+        <action
+            android:id="@+id/action_registr_to_defaultfragment2"
+            app:destination="@id/defaultfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/proverka"
+        android:name="com.example.betatest.presentation.fragments.proverka"
+        android:label="proverka">
+        <action
+            android:id="@+id/action_proverka_to_noviyparol"
+            app:destination="@id/noviyparol" />
+    </fragment>
+    <fragment
+        android:id="@+id/defaultfragment"
+        android:name="com.example.betatest.presentation.fragments.defaultfragment"
+        android:label="defaultfragment" />
+</navigation>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BetaTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tool_notification_text">Уведомления</string>
+    <string name="tool_settings_text">Профиль</string>
+    <string name="tool_ads_text">Мои объявления</string>
+    <string name="tool_share_text">Поделиться приложением</string>
+    <string name="tool_about_text">О приложении</string>
+    <string name="tool_feedback_text">ОБРАТНАЯ СВЯЗЬ ССУКА</string>
+</resources>
