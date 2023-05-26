@@ -7,7 +7,9 @@
     android:orientation="horizontal"
     android:layout_margin="5sp"
     tools:context=".presentation.fragments.vhod1">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></ScrollView>
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -70,7 +72,7 @@
             android:textColor="@color/black"
             android:textSize="24sp" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:layout_below="@+id/textView6"
             android:id="@+id/button"
             android:layout_width="wrap_content"
@@ -123,7 +125,9 @@
             android:inputType="textPassword"
             android:textColor="@color/black"
             android:textSize="24sp" />
-        <androidx.appcompat.widget.AppCompatButton
+
+
+        <TextView
             android:id="@+id/button3"
             android:layout_below="@+id/button2"
             android:layout_width="wrap_content"

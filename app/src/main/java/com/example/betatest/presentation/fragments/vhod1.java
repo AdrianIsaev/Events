@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.betatest.R;
@@ -29,7 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class vhod1 extends Fragment {
     private EditText email_login;
     private EditText password_login;
-    private AppCompatButton button2;
+    private TextView button2;
     private SharedPreferences prefs;
     private FirebaseAuth mAuth;
     @Override
@@ -43,8 +44,10 @@ public class vhod1 extends Fragment {
         email_login = view.findViewById(R.id.textView3);
         password_login = view.findViewById(R.id.textView6);
         button2 = view.findViewById(R.id.button2);
-        AppCompatButton button3 = view.findViewById(R.id.button);
-        AppCompatButton button4 = view.findViewById(R.id.button3);
+        TextView button3 = view.findViewById(R.id.button);
+
+
+        TextView button4 = view.findViewById(R.id.button3);
         prefs = getActivity().getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String email = prefs.getString("email", null);
         String password = prefs.getString("password", null);
@@ -88,7 +91,7 @@ public class vhod1 extends Fragment {
                                         }
                                     }
                                 });
-                        //Navigation.findNavController(v).navigate(R.id.action_vhod1_to_defaultfragment);
+
                     }
                 }
             }

@@ -53,11 +53,12 @@
                 android:background="#CE3335" />
             <TextView
                 android:id="@+id/txtPName"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:layout_marginStart="100dp"
                 android:layout_toEndOf="@+id/view"
+
                 android:fontFamily="@font/eft"
                 android:text="@{projectModel.title ,default=Title}"
                 android:textColor="#CE3335"

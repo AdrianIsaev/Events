@@ -23,7 +23,7 @@ public class AppRepo {
         appDatabase = AppDatabase.getInstance(context);
     }
 
-    public LiveData<ProjectModel> getSettModelLiveData() {
+    public LiveData<ProjectModel> getSettModelLiveData2() {
         return appDatabase.projectDao().getProjectModelLiveData();
     }
     public void updateProject2(SettModel settModel) {

@@ -11,7 +11,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -25,6 +27,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,7 +54,7 @@ import java.util.UUID;
 public class AddProjectActivity extends AppCompatActivity implements OnClickItemInterface {
 
     private RecyclerView recyclerView;
-    private static final int PERMISSION_REQUEST_GALLERY = 101;
+    private static final int MY_PERMISSIONS_REQUEST_READ_MEDIA= 1201;
     private static final int PICK_IMAGE_REQUEST = 1;
     private ActivityAddProjectBinding binding;
     private String title, lang, imgLogo, adress, description;
@@ -66,7 +70,16 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
         super.onCreate(savedInstanceState);
         binding = ActivityAddProjectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
 
+            // Permission is not granted, request it from the user
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_REQUEST_READ_MEDIA);
+        } else {
+            // Permission is granted, do what you need with media
+        }
 
 
 
@@ -93,20 +106,19 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
         });
 
        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       //getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         getSupportActionBar().setTitle("Создание мероприятия");
         if (getIntent().hasExtra("model")) {
             projectModel = getIntent().getParcelableExtra("model");
             binding.edtTitle.setText(projectModel.title);
             binding.edtIssue.setText(projectModel.description);
-           // binding.edtLanguage.setText("777");
+
 
             binding.date.setText(projectModel.language);
 
 
             binding.edtIssue10.setText(projectModel.name);
-            //binding.edtIssue.setText(String.valueOf(projectModel.issues));
-            //binding.edtIssue2.setText(String.valueOf(projectModel.issues3));
+
             binding.edtWatcher.setText(String.valueOf(projectModel.watcher));
 
             isEdit = true;
@@ -310,5 +322,19 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
 
     @Override
     public void onClickItem(ProjectModel projectModel, boolean isEdit) {
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_MEDIA: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                } else {
+                }
+                return;
+            }
+        }
     }
 }

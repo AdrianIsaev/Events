@@ -33,12 +33,7 @@ public class notification extends Fragment {
     private AppCompatButton buttonEvents;
     private AppCompatButton buttonCalend;
     private ProjectViewModel projectViewModel;
-    private int isOn;
-    private int isOn2;
-    private int onIcon = R.drawable.bellsalas;
-    private int offIcon = R.drawable.bell;
-    private int onCalend = R.drawable.calend20;
-    private int offCalend = R.drawable.calendar_edit_outline;
+    ProjectModel projectModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.notification, container, false);
@@ -47,26 +42,22 @@ public class notification extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         projectViewModel = new ViewModelProvider.AndroidViewModelFactory(requireActivity().getApplication()).create(ProjectViewModel.class);
-        projectViewModel.getSettModelLiveData().observe(getViewLifecycleOwner(), projectModel -> {
+        projectViewModel.getSettModelLiveData2().observe(getViewLifecycleOwner(), projectModel -> {
             updateUI(projectModel);
                 });
-
-
+        projectModel = new ProjectModel();
         buttonCalend = view.findViewById(R.id.textViewyved2);
         buttonEvents = view.findViewById(R.id.textViewyved1);
 
 
-        AppCompatButton buttonNotify = view.findViewById(R.id.textViewyved2);
-        //String lolipop = projectModel.getTitle();
-
-
         buttonCalend.setOnClickListener(v -> {
-            ProjectModel projectModel= projectViewModel.getSettModelLiveData().getValue();
+            //ProjectModel projectModel= projectViewModel.getSettModelLiveData2().getValue();
             if (projectModel != null) {
                 if (projectModel.issues == 1) {
                     buttonCalend.setBackgroundResource(R.drawable.calendar_edit_outline);
                     buttonCalend.setTextColor(Color.parseColor("#CE3335"));
                     buttonCalend.setText("OFF");
+
                     projectModel.issues = 2;
                 } else {
                     buttonCalend.setBackgroundResource(R.drawable.calend20);
@@ -79,7 +70,7 @@ public class notification extends Fragment {
         });
 
         buttonEvents.setOnClickListener(v -> {
-            ProjectModel projectModel = projectViewModel.getSettModelLiveData().getValue();
+            //ProjectModel projectModel = projectViewModel.getSettModelLiveData2().getValue();
             if (projectModel != null) {
                 if (projectModel.issues3 == 1) {
                     buttonEvents.setBackgroundResource(R.drawable.bell);
@@ -116,8 +107,6 @@ public class notification extends Fragment {
             }
         }
     }
-
-
     @Override
     public void onDestroy() {
         super.onDestroy();

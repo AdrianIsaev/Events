@@ -14,10 +14,10 @@ import androidx.room.PrimaryKey;
 public class SettModel implements  Parcelable{
     @PrimaryKey(autoGenerate = true)
 
-    public int joji = 1;
-    public int joji2 = 1;
-    public int jiji = 1;
-    public int jiji2 = 1;
+    public int joji;
+    public int joji2;
+    public int jiji ;
+    public int jiji2 ;
     public SettModel() {
     }
     protected SettModel(Parcel in) {

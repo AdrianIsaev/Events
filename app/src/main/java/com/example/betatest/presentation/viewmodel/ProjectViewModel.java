@@ -23,7 +23,7 @@ public class ProjectViewModel extends AndroidViewModel {
     public ProjectViewModel(@NonNull Application application) {
         super(application);
         appRepo = new AppRepo(application);
-        mSettModel = appRepo.getSettModelLiveData();
+        mSettModel = appRepo.getSettModelLiveData2();
     }
     public void insertProject(ProjectModel projectModel) {
         appRepo.insertProject(projectModel);
@@ -36,7 +36,7 @@ public class ProjectViewModel extends AndroidViewModel {
     }
 
     public void updateProject2(SettModel settModel){appRepo.updateProject2(settModel);}
-    public LiveData<ProjectModel> getSettModelLiveData() {
+    public LiveData<ProjectModel> getSettModelLiveData2() {
         return mSettModel;
     }
 

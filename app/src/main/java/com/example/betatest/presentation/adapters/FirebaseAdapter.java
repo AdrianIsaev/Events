@@ -77,16 +77,12 @@ public class FirebaseAdapter extends RecyclerView.Adapter<FirebaseAdapter.Fireba
             public void onClick(View v) {
 
 
-
-
-
-
                         TextView dateforagres = holder.itemView.findViewById(R.id.dateFirebase);
                         String lolik = dateforagres.getText().toString();
                         TextView titleforagres = holder.itemView.findViewById(R.id.titleFirebase);
                         String popik = titleforagres.getText().toString();
 
-                        Toast.makeText(holder.itemView.getContext(), "", Toast.LENGTH_LONG).show();
+
                         Notification notification = new NotificationCompat.Builder(holder.itemView.getContext(), "TEST_CHANNEL")
                                 .setContentTitle("Дорогой пользователь!")
                                 .setContentText(lolik + " Приходи на " + popik + ", будет весело!")
