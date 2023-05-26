@@ -75,7 +75,6 @@ public class defaultfragment extends Fragment {
                             editor.apply();
 
 
-
                             Navigation.findNavController(requireView()).navigate(R.id.action_defaultfragment_to_vhod1);
                     }
                     return false;

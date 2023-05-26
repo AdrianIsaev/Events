@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.betatest.R;
@@ -29,6 +31,7 @@ public class registr extends Fragment {
     private EditText email_register;
     private EditText password_register;
     private AppCompatButton button2;
+    private ImageView imageView;
     private FirebaseAuth mAuth;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,8 +45,15 @@ public class registr extends Fragment {
         button2 = view.findViewById(R.id.textViewRegistr7);
         email_register = view.findViewById(R.id.textViewRegistr4);
         password_register = view.findViewById(R.id.textViewRegistr6);
+        imageView = view.findViewById(R.id.joniks);
         EditText editTex2t = view.findViewById(R.id.textViewRegistrfix2);
         mAuth = FirebaseAuth.getInstance();
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_registr2_to_vhod1);
+            }
+        });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

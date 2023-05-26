@@ -116,6 +116,7 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
             if (isEdit) {
                 title = binding.edtTitle.getText().toString().trim();
                 watcher = Integer.parseInt(binding.edtWatcher.getText().toString().trim());
+                String jooooj = binding.edtWatcher.getText().toString().trim();
                 description = binding.edtIssue.getText().toString().trim();
                 adress = binding.edtIssue10.getText().toString().trim();
 
@@ -148,12 +149,14 @@ public class AddProjectActivity extends AppCompatActivity implements OnClickItem
                 projectModel.description = description;
                 projectModel.title = title;
                 projectModel.watcher = watcher;
-
-
-
                 projectViewModel.updateProject(projectModel);
+
+
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 ImageView imageView = findViewById(R.id.edtImgLogo);
+
+
+
                 try {
                     Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();

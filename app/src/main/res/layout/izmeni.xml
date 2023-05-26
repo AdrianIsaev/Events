@@ -51,7 +51,7 @@
         android:id="@+id/textViewRegistr7"
         android:layout_width="375dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text2"
+        android:layout_below="@+id/textViewRegistr6"
         android:layout_marginBottom="0dp"
         android:textColor="@color/white"
         android:fontFamily="@font/eft"
@@ -159,58 +159,10 @@
         android:layout_marginLeft="10sp"
         android:textColor="@color/black"
         android:text="" />
-    <TextView
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="20sp"
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:fontFamily="@font/eft"
-        android:textColor="@color/black"
-        android:text="Мероприятий отмечено:"
-        android:layout_below="@+id/textViewRegistr6"
-        />
-    <TextView
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="20sp"
-        android:id="@+id/text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:fontFamily="@font/eft"
-        android:textColor="@color/black"
-        android:text="Мероприятий создано:"
-        android:layout_below="@+id/text"
-        />
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_marginTop="20sp"
-        android:layout_below="@+id/textViewRegistr6"
-        android:layout_toRightOf="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20sp"
-        android:textSize="24sp"
-        android:fontFamily="@font/eft"
-        android:layout_marginLeft="10sp"
-        android:textColor="@color/black"
-        android:text="TextView" />
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_marginTop="20sp"
-        android:layout_below="@+id/textView9"
-        android:layout_toRightOf="@+id/text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20sp"
-        android:textSize="24sp"
-        android:fontFamily="@font/eft"
-        android:layout_marginLeft="10sp"
-        android:textColor="@color/black"
-        android:text="TextView" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></LinearLayout>
 
 </RelativeLayout>

@@ -130,6 +130,9 @@
         <action
             android:id="@+id/action_registr2_to_defaultfragment"
             app:destination="@id/defaultfragment" />
+        <action
+            android:id="@+id/action_registr2_to_vhod1"
+            app:destination="@id/vhod1" />
     </fragment>
 
 

@@ -62,7 +62,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
             holder.binding.invalidateAll();
 
         }
-
+        holder.binding.imgLogorifm.setImageResource(R.drawable.calendar_multiple_check);
 
         //Picasso.get().load(iventsSpot.getImageSpot()).into(holder.binding.imgLogorifm);
     }

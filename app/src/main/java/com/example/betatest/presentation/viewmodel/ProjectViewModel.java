@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.betatest.data.repository.AppRepo;
 import com.example.betatest.data.storage.room.entity.ProjectModel;
+import com.example.betatest.data.storage.room.entity.SettModel;
 
 
 import java.util.List;
@@ -18,10 +19,11 @@ import java.util.concurrent.ExecutionException;
 
 public class ProjectViewModel extends AndroidViewModel {
     private AppRepo appRepo;
-
+    private LiveData<ProjectModel> mSettModel;
     public ProjectViewModel(@NonNull Application application) {
         super(application);
         appRepo = new AppRepo(application);
+        mSettModel = appRepo.getSettModelLiveData();
     }
     public void insertProject(ProjectModel projectModel) {
         appRepo.insertProject(projectModel);
@@ -32,6 +34,12 @@ public class ProjectViewModel extends AndroidViewModel {
     public void deleteProject(ProjectModel projectModel) {
         appRepo.deleteProject(projectModel);
     }
+
+    public void updateProject2(SettModel settModel){appRepo.updateProject2(settModel);}
+    public LiveData<ProjectModel> getSettModelLiveData() {
+        return mSettModel;
+    }
+
     public List<ProjectModel> getAllProjectFuture() throws ExecutionException, InterruptedException {
         return appRepo.getAllProjectFuture();
     }

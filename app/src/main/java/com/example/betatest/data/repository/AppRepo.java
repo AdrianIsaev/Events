@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 
 
 import com.example.betatest.data.storage.room.entity.ProjectModel;
+import com.example.betatest.data.storage.room.entity.SettModel;
 import com.example.betatest.data.storage.room.root.AppDatabase;
 
 import java.util.List;
@@ -20,6 +21,18 @@ public class AppRepo {
     private Executor executor = Executors.newSingleThreadExecutor();
     public AppRepo(Context context) {
         appDatabase = AppDatabase.getInstance(context);
+    }
+
+    public LiveData<ProjectModel> getSettModelLiveData() {
+        return appDatabase.projectDao().getProjectModelLiveData();
+    }
+    public void updateProject2(SettModel settModel) {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                appDatabase.projectDao().updateProject(settModel);
+            }
+        });
     }
     public void insertProject(ProjectModel projectModel) {
         executor.execute(new Runnable() {
@@ -37,6 +50,10 @@ public class AppRepo {
             }
         });
     }
+
+
+
+
     public void deleteProject(ProjectModel projectModel) {
         executor.execute(new Runnable() {
             @Override

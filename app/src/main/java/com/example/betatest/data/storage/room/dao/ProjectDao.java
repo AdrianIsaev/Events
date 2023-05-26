@@ -31,11 +31,19 @@ public interface ProjectDao {
     @Query("DELETE FROM project")
     void deleteAllProjects();
 
+    @Query("SELECT * FROM project")
+    LiveData<ProjectModel> getProjectModelLiveData();
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertProject(SettModel settModel);
     @Update
     void updateProject(SettModel settModel);
+
+
+    @Query("SELECT * FROM project2")
+    LiveData<SettModel> getSettModelLiveData();
+
     @Delete
     void deleteProject(SettModel settModel);
     @Query("SELECT * FROM project2")

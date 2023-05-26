@@ -63,6 +63,8 @@ public class ProjectModel implements Parcelable {
     public int getLongitude(){
         return issues3;
     }
+    public int getIssues()
+    {return issues;}
     public String getTitle(){
         return title;
     }
